@@ -21,25 +21,40 @@ body {
 .header {
   width: 100%;
   background: var(--bg-light);
-  padding: 1rem 0;
   position: sticky;
   top: 0;
   z-index: 100;
+  padding: 12px 32px;
 }
 
 .header-container {
-  /* max-width: 1200px; */
   margin: 0 auto;
-  padding: 0 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+.header__left {
+  display: flex;
+  align-items: center;
+}
+
 .logo {
-  font-size: 1.5rem;
-  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.logo img {
+  height: 3em;
+}
+
+.logo-text {
+  font-weight: 600;
+  font-size: 24px;
   color: var(--text-dark);
+  font-family: 'League Spartan', sans-serif;
+  margin-bottom: -8px;
 }
 
 .get-started-btn {
@@ -54,5 +69,49 @@ body {
 }
 
 .get-started-btn:hover {
+  background: var(--primary-dark);
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-link {
+  font-size: 14px;
+  color: var(--text-light);
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: var(--text-dark);
+}
+
+/* hide nav link in mobile view */
+@media (max-width: 768px) {
+  .nav-link {
+    display: none;
+  }
+  .header {
+     padding: 12px 12px;
+}
+}
+
+.cta-button {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+
+  color: var(--bg-light);
+  background: var(--primary-color);
+  border: none;
+  border-radius: 8px;
+
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
   background: var(--primary-dark);
 }
