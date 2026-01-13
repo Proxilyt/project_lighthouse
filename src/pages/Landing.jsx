@@ -1,17 +1,11 @@
+import Header from '../components/Header'
 import WaitlistForm from '../components/WaitlistForm'
+import { APP_NAME } from '../constants'
 import '../pages/Landing.css'
 
 export default function Landing() {
   return (
     <div className="landing">
-      {/* Header */}
-      <header className="header">
-        <div className="header-container">
-          <div className="logo">Projelct</div>
-          <button className="get-started-btn">Get Started</button>
-        </div>
-      </header>
-
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-content">
@@ -84,7 +78,7 @@ export default function Landing() {
       {/* Footer */}
       <footer className="footer">
         <div className="footer-content">
-          <span>© Projelct. All rights reserved.</span>
+          <span>© {APP_NAME}. All rights reserved.</span>
           <div className="footer-links">
             <a href="#terms">Terms</a>
             <a href="#privacy">Privacy</a>
