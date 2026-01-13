@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:project_lighthouse/core/theme/app_colors.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import '../../widgets/custom_app_bar.dart';
 
 class PhoneAuthScreen extends StatefulWidget {
   const PhoneAuthScreen({super.key});
@@ -48,19 +50,7 @@ class _PhoneAuthScreenState extends State<PhoneAuthScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Row(
-          children: [
-            Image.asset(
-              'assets/icon.png',
-              height: 40,
-              width: 40,
-            ),
-            const SizedBox(width: 12),
-            const Text('Proxilyt'),
-          ],
-        ),
-      ),
+      appBar: const CustomAppBar(),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
@@ -71,9 +61,9 @@ class _PhoneAuthScreenState extends State<PhoneAuthScreen> {
                 borderRadius: BorderRadius.circular(12),
                 boxShadow: [
                   BoxShadow(
-                    color: const Color.fromARGB(255, 230, 230, 230).withOpacity(0.08),
-                    blurRadius: 16,
-                    offset: const Offset(0, 4),
+                    color: Color.fromARGB(255, 2, 2, 2).withOpacity(0.08),
+                    blurRadius: 0,
+                    offset: const Offset(0, 1),
                   ),
                 ],
               ),
@@ -87,14 +77,14 @@ class _PhoneAuthScreenState extends State<PhoneAuthScreen> {
                 width: 80,
                 height: 80,
                 decoration: BoxDecoration(
-                  color: Colors.blue.withOpacity(0.1),
+                  color: AppColors.secondary.withOpacity(0.1),
                   shape: BoxShape.circle,
                 ),
-                child: Center(
+                child: const Center(
                   child: Icon(
                     Icons.phone_outlined,
                     size: 40,
-                    color: Colors.blue[700],
+                    color: AppColors.primary,
                   ),
                 ),
               ),
@@ -163,7 +153,7 @@ class _PhoneAuthScreenState extends State<PhoneAuthScreen> {
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8),
-                    borderSide: const BorderSide(color: Colors.blue, width: 2),
+                    borderSide: const BorderSide(color: AppColors.primary, width: 2),
                   ),
                   contentPadding: const EdgeInsets.symmetric(vertical: 16),
                 ),
@@ -176,8 +166,8 @@ class _PhoneAuthScreenState extends State<PhoneAuthScreen> {
                 child: ElevatedButton(
                   onPressed: _loading ? null : _sendOtp,
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue[700],
-                    disabledBackgroundColor: Colors.blue[700]?.withOpacity(0.5),
+                    backgroundColor: AppColors.primary,
+                    disabledBackgroundColor: AppColors.primary.withOpacity(0.5),
                     padding: const EdgeInsets.symmetric(vertical: 16),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
@@ -238,7 +228,7 @@ class _PhoneAuthScreenState extends State<PhoneAuthScreen> {
                       'Terms of Service',
                       style: TextStyle(
                         fontSize: 12,
-                        color: Colors.blue,
+                        color: AppColors.primary,
                         decoration: TextDecoration.underline,
                       ),
                     ),
@@ -257,7 +247,7 @@ class _PhoneAuthScreenState extends State<PhoneAuthScreen> {
                       'Privacy Policy',
                       style: TextStyle(
                         fontSize: 12,
-                        color: Colors.blue,
+                        color: AppColors.primary,
                         decoration: TextDecoration.underline,
                       ),
                     ),
