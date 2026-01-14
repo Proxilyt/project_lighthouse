@@ -71,6 +71,9 @@
   border-radius: 0.5rem;
   font-size: 0.95rem;
   transition: border-color 0.3s ease;
+  background: var(--bg-light);
+  color: var(--text-dark);
+  box-shadow: 0px 5px 20px 0px #3730a330;
 }
 
 .form-input:focus {
@@ -110,7 +113,7 @@
 }
 
 .form-button.dark:hover:not(:disabled) {
-  background: #111827;
+  background: var(--accent-blue);
 }
 
 .form-message {
@@ -221,11 +224,6 @@
 .cta-form {
   display: flex;
   justify-content: center;
-}
-
-.cta-form .form-input {
-  background: white;
-  color: var(--text-dark);
 }
 
 .cta-form .form-input::placeholder {

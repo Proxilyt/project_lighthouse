@@ -80,10 +80,10 @@ export default function Landing() {
         <div className="footer-content">
           <span>© {APP_NAME}. All rights reserved.</span>
           <div className="footer-links">
-            <a href="#terms">Terms</a>
+            {/* <a href="#terms">Terms</a>
             <a href="#privacy">Privacy</a>
             <a href="#support">Support</a>
-            <a href="#contact">Contact</a>
+            <a href="#contact">Contact</a> */}
           </div>
         </div>
       </footer>
