@@ -9,7 +9,7 @@ export default function Landing() {
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-content">
-          <div className="beta-badge">DEEPER INSIGHTS — SCAN SITES INSTANTLY</div>
+          <div className="beta-badge">STATUS: WAITING - SOON TO BE DEPLOYED</div>
           <h1 className="hero-title">
             Local SEO Analytics
             <br />
@@ -30,7 +30,7 @@ export default function Landing() {
       </section>
 
       {/* Features Section */}
-      <section className="features">
+      <section id="features" className="features">
         <div className="features-grid">
           <div className="feature-card">
             <div className="feature-icon">📍</div>
@@ -62,7 +62,7 @@ export default function Landing() {
       </section>
 
       {/* CTA Section */}
-      <section className="cta-section">
+      <section id="cta-section" className="cta-section">
         <div className="cta-content">
           <h2>Be the first to know when we launch.</h2>
           <p>

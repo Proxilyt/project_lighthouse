@@ -22,11 +22,11 @@
 .beta-badge {
   display: inline-block;
   background: var(--accent-orange);
-  color: #ffffff;
+  color: var(--text-dark);
   padding: 0.4rem 1rem;
   border-radius: 9999px;
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.05em;
   margin-bottom: 1.5rem;
 }

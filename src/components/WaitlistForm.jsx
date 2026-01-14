@@ -43,7 +43,7 @@ export default function WaitlistForm({ isBottomCta = false }) {
     <form onSubmit={handleSubmit} className={`waitlist-form ${isBottomCta ? 'bottom-cta' : ''}`}>
       <input
         type="email"
-        placeholder={isBottomCta ? 'your@email.com' : 'yourname@email.com'}
+        placeholder={'your@email.com'}
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         disabled={loading}

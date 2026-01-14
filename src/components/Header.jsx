@@ -14,7 +14,7 @@ export default function Header() {
           <a href="#features" className="nav-link">
             Features
           </a>
-          <button href="#cta-section" className="cta-button">Join Waitlist</button>
+          <button className="cta-button"><a href="#cta-section">Join Waitlist</a></button>
         </nav>
       </div>
     </header>
