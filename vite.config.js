@@ -8,13 +8,27 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.svg'],
+      devOptions: { enabled: true },
       manifest: {
         name: 'Proxilyt',
         short_name: 'Proxilyt',
         description: 'Analyze local SEO performance for your business.',
-        theme_color: '#f9fafb'
+        theme_color: '#4338ca',
+        background_color: '#f9fafb',
+        display: 'standalone',
+        icons: [
+          {
+            src: '/favicon-192x192.png',
+            sizes: '192x192',
+            type: 'image/png',
+          },
+          {
+            src: '/favicon-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+          },
+        ],
       },
     }),
   ],
-})
+});
