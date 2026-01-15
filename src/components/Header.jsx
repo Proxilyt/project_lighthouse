@@ -6,7 +6,7 @@ export default function Header() {
       <div className="header-container">
         <div className="header__left">
           <div className="logo">
-            <span className="logo-icon"> <img src="/src/assets/logo_light_mode.svg" alt="Proxilyt Logo" /></span>
+            <span className="logo-icon"> <img src="src/assets/logo_light_mode.svg" alt="Proxilyt Logo" /></span>
             <span className="logo-text">Proxilyt</span>
           </div>
         </div>
