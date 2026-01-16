@@ -1,7 +1,8 @@
-import Header from "../components/Header";
 import WaitlistForm from "../components/WaitlistForm";
 import { APP_NAME } from "../constants";
 import "../pages/Landing.css";
+import featureImage1 from "../assets/feature_image_1.png";
+import featureImage2 from "../assets/feature_image_2.png";
 
 export default function Landing() {
   return (
@@ -58,8 +59,27 @@ export default function Landing() {
       </section>
 
       {/* Featured Image Section */}
-      <section className="featured-section">
-        <div className="featured-box"></div>
+      <section className="featured-section perspective-container">
+        <div className="tilt-card tilt-card-left">
+          <div className="menu-bar-sim">
+            <div class="w-2.5 h-2.5 rounded-full bg-red-400/30"></div>
+            <div class="w-2.5 h-2.5 rounded-full bg-amber-400/30"></div>
+            <div class="w-2.5 h-2.5 rounded-full bg-green-400/30"></div>
+          </div>
+          <div className="featured-box">
+            <img src={featureImage1} alt="feature_image_1" />
+          </div>
+        </div>
+        <div className="tilt-card tilt-card-right">
+          <div className="menu-bar-sim">
+            <div class="w-2.5 h-2.5 rounded-full bg-red-400/30"></div>
+            <div class="w-2.5 h-2.5 rounded-full bg-amber-400/30"></div>
+            <div class="w-2.5 h-2.5 rounded-full bg-green-400/30"></div>
+          </div>
+          <div className="featured-box right-box">
+            <img src={featureImage2} alt="feature_image_2" />
+          </div>
+        </div>
       </section>
 
       {/* CTA Section */}
