@@ -8,13 +8,13 @@
   --border-color: #e5e7eb;
   --accent-blue: #60a5fa;
   --accent-orange: #f59e0b;
-  
+
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color-scheme: light;
+  color: var(--text-dark);
   background-color: var(--bg-lighter);
 
   font-synthesis: none;
@@ -60,17 +60,4 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: var(--primary-color);
-    background-color: var(--text-light);
-  }
-  a:hover {
-    color: var(--primary-dark);
-  }
-  button {
-    background-color: var(--bg-light);
-  }
 }
