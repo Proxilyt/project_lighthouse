@@ -3,19 +3,21 @@ import { Resend } from "npm:resend";
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY")!);
 
-const allowedOrigins = ["http://localhost:5173", "https://www.proxilyt.com/"];
+const allowedOrigins = ["http://localhost:5173", "https://www.proxilyt.com"];
 
-serve(async (req: Request) => {
+const getCorsHeaders = (req: Request) => {
   const origin = req.headers.get("origin") ?? "";
-  const corsHeaders = {
-    "Access-Control-Allow-Origin": allowedOrigins.includes(origin)
-      ? origin
-      : "",
+  return {
+    "Access-Control-Allow-Origin": allowedOrigins.includes(origin) ? origin : "",
     "Access-Control-Allow-Headers":
       "authorization, x-client-info, apikey, content-type",
     "Access-Control-Allow-Methods": "POST, OPTIONS",
   };
-  
+};
+
+serve(async (req: Request) => {
+  const corsHeaders = getCorsHeaders(req);
+
   if (req.method === "OPTIONS") {
     return new Response(null, {
       status: 204, // ← explicitly OK
