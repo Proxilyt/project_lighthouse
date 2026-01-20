@@ -1,16 +1,35 @@
 import { serve } from "https://deno.land/std/http/server.ts";
 import { Resend } from "npm:resend";
 
-const resend = new Resend(Deno.env.get("RESEND_API_KEY")!)
+const resend = new Resend(Deno.env.get("RESEND_API_KEY")!);
+
+const allowedOrigins = ["http://localhost:5173", "https://www.proxilyt.com/"];
 
 serve(async (req: Request) => {
+  const origin = req.headers.get("origin") ?? "";
+  const corsHeaders = {
+    "Access-Control-Allow-Origin": allowedOrigins.includes(origin)
+      ? origin
+      : "",
+    "Access-Control-Allow-Headers":
+      "authorization, x-client-info, apikey, content-type",
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+  };
+  
+  if (req.method === "OPTIONS") {
+    return new Response(null, {
+      status: 204, // ← explicitly OK
+      headers: corsHeaders,
+    });
+  }
+
   try {
     const { email } = await req.json();
 
     if (!email || typeof email !== "string" || !email.includes("@")) {
       return new Response(
         JSON.stringify({ error: "Valid email is required" }),
-        { status: 400, headers: { "Content-Type": "application/json" } }
+        { status: 400, headers: corsHeaders }
       );
     }
 
@@ -38,21 +57,21 @@ serve(async (req: Request) => {
     });
 
     if (error) {
-      return new Response(
-        JSON.stringify({ error: "Failed to send email" }),
-        { status: 500, headers: { "Content-Type": "application/json" } }
-      );
+      return new Response(JSON.stringify({ error: "Failed to send email" }), {
+        status: 500,
+        headers: corsHeaders,
+      });
     }
 
     return new Response(JSON.stringify({ success: true, data }), {
       status: 200,
-      headers: { "Content-Type": "application/json" },
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   } catch (err) {
     console.error("Unexpected error:", err);
-    return new Response(
-      JSON.stringify({ error: "Internal server error" }),
-      { status: 500, headers: { "Content-Type": "application/json" } }
-    );
+    return new Response(JSON.stringify({ error: "Internal server error" }), {
+      status: 500,
+      headers: corsHeaders,
+    });
   }
 });

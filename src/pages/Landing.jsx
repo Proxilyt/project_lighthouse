@@ -62,9 +62,9 @@ export default function Landing() {
       <section className="featured-section perspective-container">
         <div className="tilt-card tilt-card-left">
           <div className="menu-bar-sim">
-            <div class="w-2.5 h-2.5 rounded-full bg-red-400/30"></div>
-            <div class="w-2.5 h-2.5 rounded-full bg-amber-400/30"></div>
-            <div class="w-2.5 h-2.5 rounded-full bg-green-400/30"></div>
+            <div className="w-2.5 h-2.5 rounded-full bg-red-400/30"></div>
+            <div className="w-2.5 h-2.5 rounded-full bg-amber-400/30"></div>
+            <div className="w-2.5 h-2.5 rounded-full bg-green-400/30"></div>
           </div>
           <div className="featured-box">
             <img src={featureImage1} alt="feature_image_1" />
@@ -72,9 +72,9 @@ export default function Landing() {
         </div>
         <div className="tilt-card tilt-card-right">
           <div className="menu-bar-sim">
-            <div class="w-2.5 h-2.5 rounded-full bg-red-400/30"></div>
-            <div class="w-2.5 h-2.5 rounded-full bg-amber-400/30"></div>
-            <div class="w-2.5 h-2.5 rounded-full bg-green-400/30"></div>
+            <div className="w-2.5 h-2.5 rounded-full bg-red-400/30"></div>
+            <div className="w-2.5 h-2.5 rounded-full bg-amber-400/30"></div>
+            <div className="w-2.5 h-2.5 rounded-full bg-green-400/30"></div>
           </div>
           <div className="featured-box right-box">
             <img src={featureImage2} alt="feature_image_2" />

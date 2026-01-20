@@ -9,7 +9,7 @@ export default function WaitlistForm({ isBottomCta = false }) {
   const sendEmail = async (email) => {
     try {
       const response = await fetch(
-        "http://127.0.0.1:54321/functions/v1/send-waitlist-email",
+        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-waitlist-email`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -60,6 +60,7 @@ export default function WaitlistForm({ isBottomCta = false }) {
           setMessage("Successfully added to waitlist! 🎉");
           setEmail("");
         } else {
+          console.error("Email sending failed:", emailResult.error);
           setMessage(
             "Added to waitlist, but failed to send confirmation email. Please try again."
           );
