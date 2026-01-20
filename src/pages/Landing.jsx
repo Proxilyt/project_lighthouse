@@ -10,9 +10,9 @@ export default function Landing() {
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-content">
-          <div className="beta-badge">
+          {/* <div className="beta-badge">
             STATUS: WAITING - SOON TO BE DEPLOYED
-          </div>
+          </div> */}
           <h1 className="hero-title">
             Local Competitive Analytics
             <br />
